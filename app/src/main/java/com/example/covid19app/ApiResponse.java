@@ -18,8 +18,9 @@ public class ApiResponse<T> {
     public ApiResponse(int status, T data, Throwable throwable) {
         this.status = status;
         this.data = data;
-        if(throwable!=null){
-            parseException(throwable);}
+        if (throwable != null) {
+            parseException(throwable);
+        }
     }
 
     private void parseException(Throwable throwable) {

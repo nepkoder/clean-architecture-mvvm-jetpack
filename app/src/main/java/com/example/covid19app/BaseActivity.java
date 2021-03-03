@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel;
 
 import dagger.android.AndroidInjection;
 
-public abstract class BaseActivity<T extends ViewDataBinding,V extends ViewModel> extends AppCompatActivity {
+public abstract class BaseActivity<T extends ViewDataBinding, V extends ViewModel> extends AppCompatActivity {
 
     private T viewDataBinding;
     private V viewModel;
@@ -38,9 +38,9 @@ public abstract class BaseActivity<T extends ViewDataBinding,V extends ViewModel
     }
 
     private void performDatabinding() {
-        viewDataBinding= DataBindingUtil.setContentView(this,getLayoutId());
-        this.viewModel=viewModel==null?getViewModel():viewModel;
-        viewDataBinding.setVariable(getBindingVaraiable(),viewModel);
+        viewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
+        this.viewModel = viewModel == null ? getViewModel() : viewModel;
+        viewDataBinding.setVariable(getBindingVaraiable(), viewModel);
         viewDataBinding.setLifecycleOwner(this);
         viewDataBinding.executePendingBindings();
     }
